@@ -1,0 +1,77 @@
+:root {
+  --font-size-normal: 1.6rem;
+  --font-size-large: 4.8rem;
+  --font-size-sortalarge: 3.2rem;
+  --font-size-medium: 2.4rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 1rem;
+  margin: 1rem;
+  box-sizing: border-box;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(190, 212, 207, 0.5),
+    rgba(155, 209, 198, 0.9)
+  );
+}
+
+.header {
+  height: 100vh;
+}
+
+.intro {
+    position: absolute;
+	top: 40%;
+	left: 50%;
+	font-size: var(--font-size-large);
+	letter-spacing: 1rem;
+	font-weight: bold;
+	transform: translate(-50%, -50%);
+	font-family: "Roboto Mono", monospace;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.subintro {
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	font-weight: bold;
+	font-size: var(--font-size-medium);
+	transform: translate(-50%, -50%);
+	letter-spacing: 0.1rem;
+	font-family: "Roboto", monospace;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width:1600px){
+
+    
+
+}
+
+@media only screen and (max-width:1368px){
+	
+    
+    
+}
+
+ @media only screen and (max-width: 1024px) {
+
+  	.intro{
+  		white-space: normal;
+		top: 40%;
+  	}
+
+     .subintro{
+  		white-space: normal;
+  		top: 65%;
+      }
+      
+}
