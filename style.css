@@ -220,7 +220,6 @@ body {
   font-weight: bold;
   font-family: "Roboto";
   overflow: hidden;
-  white-space: nowrap;
 }
 
 /*Creates project section*/
@@ -239,7 +238,6 @@ body {
   font-weight: bold;
   font-family: "Roboto";
   overflow: hidden;
-  white-space: nowrap;
 }
 
 /*Changes when screen is below 1600px*/
@@ -259,7 +257,7 @@ body {
 
   .subintro {
     white-space: normal;
-    top: 65%;
+    top: 75%;
   }
 }
 
