@@ -1,3 +1,4 @@
+/*Text Size Variables*/
 :root {
   --font-size-normal: 1.6rem;
   --font-size-large: 4.8rem;
@@ -5,10 +6,12 @@
   --font-size-medium: 2.4rem;
 }
 
+/*Default Text Size*/
 html {
   font-size: 62.5%;
 }
 
+/*Adds a padding around the edges of the screen, also makes a background color*/
 body {
   padding: 1rem;
   margin: 1rem;
@@ -20,13 +23,163 @@ body {
   );
 }
 
-.header {
-  height: 100vh;
+/*Hides the checkbox the hamburger button is based on*/
+.navigation_checkbox{
+	display: none;
 }
 
+/* Styles the hamburger button */
+.navigation_button{
+	background-color:white;
+	height: 6rem;
+	width: 6rem;
+	border-radius: 50%;
+	position: fixed;
+	top: 6rem;
+	right: 6rem;
+	z-index: 2000;
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+	text-align: center;
+	cursor: pointer;
+}
+
+/* Centers the hamburger button lines */
+.navigation_icon{
+	position: relative;
+	margin-top: 3rem;
+}
+
+/* Separates the hamburger button lines*/
+.navigation_icon::before, .navigation_icon::after{
+	content: "";
+}
+
+/* Separates the top hamburger button line*/
+.navigation_icon::before{
+	position: absolute;
+	top: -0.8rem;
+	left: 0;
+}
+
+/* Separates the bottom hamburger button line*/
+.navigation_icon::after{
+	position: absolute;
+	top: 0.8rem;
+	left: 0;
+}
+
+/* Creates the hamburger button lines*/
+.navigation_icon, .navigation_icon::before, .navigation_icon::after{
+	width: 3rem;
+	height: 2px;
+	background-color: #333;
+	display: inline-block;
+	transition: all 0.2s;
+}
+
+/* Makes the middle hamburger button line disappear*/
+.navigation_checkbox:checked + .navigation_button .navigation_icon{
+	background-color: transparent;
+}
+
+/*Transforms top hamburger button line into part of X*/
+.navigation_checkbox:checked + .navigation_button .navigation_icon::before{
+	transform:rotate(135deg);
+	top: 0;
+}
+
+/*Transforms bottom hamburger button line into part of X*/
+.navigation_checkbox:checked + .navigation_button .navigation_icon::after{
+	transform:rotate(-135deg);
+	top: 0;
+}
+
+/* Stylizes the list of pages the hamburger button is responsible for*/
+.navigation_list{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	list-style: none;
+	text-align: center;
+	width: 100%;
+}
+
+/*Fades the hamburger menu text in*/
+.navigation_item{
+	margin: 1rem;
+	animation: fadein 1s;
+}
+
+/*Stylizes the hamburger menu*/
+.navigation_nav{
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1500;
+	opacity: 0;
+	width: 0%;
+	display: none;
+	transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/*Stylizes the hamburger menu page*/
+.navigation_background{
+	height: 6rem;
+	width: 6rem;
+	border-radius: 50%;
+	position: fixed;
+	top: 6rem;
+	right: 6rem;
+	background-color: rgba(190, 212, 207, 1);
+	z-index: 1000;
+	transition: transform 0.8s;
+}
+
+/*Stylizes the elements of the hamburger menu*/
+.navigation_link, .navigation_link:link, .navigation_link:visited{
+	display: inline-block;
+	font-size: 3rem;
+	font-weight: 300;
+	padding: 1rem 2rem;
+	color: black;
+  font-family: "Roboto";
+	text-decoration: none;
+	text-transform: uppercase;
+	background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+	background-size: 240%;
+	transition: all 0.4s;
+}
+
+/*Creates an animation when hovering over the hamburger elements*/
+.navigation_link:hover, .navigation_link:active{
+	background-position: 100%;
+	color: rgba(50, 50, 50, 1);
+	transform: translateX(1rem);
+}
+
+/*Causes hamburger page to expand*/
+.navigation_checkbox:checked~.navigation_background{
+	transform: scale(80);
+}
+
+/*Makes hamburger menu visible*/
+.navigation_checkbox:checked~.navigation_nav{
+	opacity: 1;
+	width: 100%;
+	display: block;
+}
+
+/*Creates Header Section*/
+.header {
+  height: 150vh;
+}
+
+/*Main words of header section*/
 .intro {
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
   font-size: var(--font-size-large);
   letter-spacing: 1rem;
@@ -37,9 +190,10 @@ body {
   white-space: nowrap;
 }
 
+/*Secondary words of header section*/
 .subintro {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   font-weight: bold;
   font-size: var(--font-size-medium);
@@ -50,12 +204,53 @@ body {
   white-space: nowrap;
 }
 
+/*Creates about section*/
+.about{
+  height: 100vh;
+  padding: 1rem;
+}
+
+/*Heading of about section*/
+.about_intro{
+  position: relative;
+  margin: auto;
+  text-align: center;
+  font-size: var(--font-size-large);
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  font-family: "Roboto";
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/*Creates project section*/
+.projects{
+  height: 100vh;
+  padding: 1rem;
+}
+
+/*Heading of project section*/
+.project_intro{
+  position: relative;
+  margin: auto;
+  text-align: center;
+  font-size: var(--font-size-large);
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  font-family: "Roboto";
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/*Changes when screen is below 1600px*/
 @media only screen and (max-width: 1600px) {
 }
 
+/*Changes when screen is below 1368px*/
 @media only screen and (max-width: 1368px) {
 }
 
+/*Changes when screen is below 1024px*/
 @media only screen and (max-width: 1024px) {
   .intro {
     white-space: normal;
@@ -66,4 +261,24 @@ body {
     white-space: normal;
     top: 65%;
   }
+}
+
+/* Fade In animation*/
+@keyframes fadein{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+/* Fade Out animation*/
+@keyframes fadeout{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
 }
