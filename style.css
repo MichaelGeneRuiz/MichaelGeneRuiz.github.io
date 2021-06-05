@@ -187,6 +187,14 @@ body {
   height: 125vh;
 }
 
+.logo {
+  position: absolute;
+  transform: translate(-2rem);
+  max-width: 50%;
+  height: auto;
+  opacity: 20%;
+}
+
 /*Main words of header section*/
 .intro {
   position: absolute;
@@ -300,7 +308,7 @@ body {
 
 /*Creates project section*/
 .projects {
-  height: 95vh;
+  height: 95rem;
   padding: 1rem;
 
 }
@@ -385,6 +393,10 @@ body {
     right: 3rem;
   }
 
+  .logo{
+    max-width: 25%;
+  }
+
   .intro {
     white-space: normal;
     top: 40%;
@@ -397,6 +409,10 @@ body {
 
   .about{
     height: 150vh;
+  }
+
+  .about_box{
+    padding-bottom: 0.75rem;
   }
 
   [class*="col-"] {
@@ -412,11 +428,6 @@ body {
 	  min-height: auto;
 	  min-width: 80%;
   }
-
-  .project_intro{
-    white-space: normal;
-    overflow: hidden;
-  }
   
 }
 
@@ -425,6 +436,26 @@ body {
     font-size: 50%;
   }
 }
+
+/*Changes when screen height is below 575px*/
+@media only screen and (max-height: 575px){
+  .about{
+    height: 275vh;
+  }
+}
+
+/*Changes when screen height is below 360px*/
+@media only screen and (max-height: 360px){
+  html{
+    font-size: 50%;
+  }
+
+  .intro{
+    top: 35%;
+  }
+}
+
+
 
 /* Fade In animation*/
 @keyframes fadein {
