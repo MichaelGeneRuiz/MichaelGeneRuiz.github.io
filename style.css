@@ -24,156 +24,167 @@ body {
 }
 
 /*Hides the checkbox the hamburger button is based on*/
-.navigation_checkbox{
-	display: none;
+.navigation_checkbox {
+  display: none;
 }
 
 /* Styles the hamburger button */
-.navigation_button{
-	background-color:white;
-	height: 6rem;
-	width: 6rem;
-	border-radius: 50%;
-	position: fixed;
-	top: 6rem;
-	right: 6rem;
-	z-index: 2000;
-	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-	text-align: center;
-	cursor: pointer;
+.navigation_button {
+  background-color: white;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
 }
 
 /* Centers the hamburger button lines */
-.navigation_icon{
-	position: relative;
-	margin-top: 3rem;
+.navigation_icon {
+  position: relative;
+  margin-top: 3rem;
 }
 
 /* Separates the hamburger button lines*/
-.navigation_icon::before, .navigation_icon::after{
-	content: "";
+.navigation_icon::before,
+.navigation_icon::after {
+  content: "";
 }
 
 /* Separates the top hamburger button line*/
-.navigation_icon::before{
-	position: absolute;
-	top: -0.8rem;
-	left: 0;
+.navigation_icon::before {
+  position: absolute;
+  top: -0.8rem;
+  left: 0;
 }
 
 /* Separates the bottom hamburger button line*/
-.navigation_icon::after{
-	position: absolute;
-	top: 0.8rem;
-	left: 0;
+.navigation_icon::after {
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
 }
 
 /* Creates the hamburger button lines*/
-.navigation_icon, .navigation_icon::before, .navigation_icon::after{
-	width: 3rem;
-	height: 2px;
-	background-color: #333;
-	display: inline-block;
-	transition: all 0.2s;
+.navigation_icon,
+.navigation_icon::before,
+.navigation_icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #333;
+  display: inline-block;
+  transition: all 0.2s;
 }
 
 /* Makes the middle hamburger button line disappear*/
-.navigation_checkbox:checked + .navigation_button .navigation_icon{
-	background-color: transparent;
+.navigation_checkbox:checked + .navigation_button .navigation_icon {
+  background-color: transparent;
 }
 
 /*Transforms top hamburger button line into part of X*/
-.navigation_checkbox:checked + .navigation_button .navigation_icon::before{
-	transform:rotate(135deg);
-	top: 0;
+.navigation_checkbox:checked + .navigation_button .navigation_icon::before {
+  transform: rotate(135deg);
+  top: 0;
 }
 
 /*Transforms bottom hamburger button line into part of X*/
-.navigation_checkbox:checked + .navigation_button .navigation_icon::after{
-	transform:rotate(-135deg);
-	top: 0;
+.navigation_checkbox:checked + .navigation_button .navigation_icon::after {
+  transform: rotate(-135deg);
+  top: 0;
 }
 
 /* Stylizes the list of pages the hamburger button is responsible for*/
-.navigation_list{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	list-style: none;
-	text-align: center;
-	width: 100%;
+.navigation_list {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
 }
 
 /*Fades the hamburger menu text in*/
-.navigation_item{
-	margin: 1rem;
-	animation: fadein 1s;
+.navigation_item {
+  margin: 1rem;
+  animation: fadein 1s;
 }
 
 /*Stylizes the hamburger menu*/
-.navigation_nav{
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1500;
-	opacity: 0;
-	width: 0%;
-	display: none;
-	transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.navigation_nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  opacity: 0;
+  width: 0%;
+  display: none;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /*Stylizes the hamburger menu page*/
-.navigation_background{
-	height: 6rem;
-	width: 6rem;
-	border-radius: 50%;
-	position: fixed;
-	top: 6rem;
-	right: 6rem;
-	background-color: rgba(190, 212, 207, 1);
-	z-index: 1000;
-	transition: transform 0.8s;
+.navigation_background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  background-color: rgba(190, 212, 207, 1);
+  z-index: 1000;
+  transition: transform 0.8s;
 }
 
 /*Stylizes the elements of the hamburger menu*/
-.navigation_link, .navigation_link:link, .navigation_link:visited{
-	display: inline-block;
-	font-size: 3rem;
-	font-weight: 300;
-	padding: 1rem 2rem;
-	color: black;
+.navigation_link,
+.navigation_link:link,
+.navigation_link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: black;
   font-family: "Roboto";
-	text-decoration: none;
-	text-transform: uppercase;
-	background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
-	background-size: 240%;
-	transition: all 0.4s;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%
+  );
+  background-size: 240%;
+  transition: all 0.4s;
 }
 
 /*Creates an animation when hovering over the hamburger elements*/
-.navigation_link:hover, .navigation_link:active{
-	background-position: 100%;
-	color: rgba(50, 50, 50, 1);
-	transform: translateX(1rem);
+.navigation_link:hover,
+.navigation_link:active {
+  background-position: 100%;
+  color: rgba(50, 50, 50, 1);
+  transform: translateX(1rem);
 }
 
 /*Causes hamburger page to expand*/
-.navigation_checkbox:checked~.navigation_background{
-	transform: scale(80);
+.navigation_checkbox:checked ~ .navigation_background {
+  transform: scale(80);
 }
 
 /*Makes hamburger menu visible*/
-.navigation_checkbox:checked~.navigation_nav{
-	opacity: 1;
-	width: 100%;
-	display: block;
+.navigation_checkbox:checked ~ .navigation_nav {
+  opacity: 1;
+  width: 100%;
+  display: block;
 }
 
 /*Creates Header Section*/
 .header {
-  height: 150vh;
+  height: 125vh;
 }
 
 /*Main words of header section*/
@@ -205,39 +216,151 @@ body {
 }
 
 /*Creates about section*/
-.about{
+.about {
   height: 100vh;
   padding: 1rem;
 }
 
 /*Heading of about section*/
-.about_intro{
+.about_intro {
   position: relative;
   margin: auto;
   text-align: center;
   font-size: var(--font-size-large);
   letter-spacing: 0.1rem;
   font-weight: bold;
-  font-family: "Roboto";
+  font-family: "Roboto Mono";
   overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+/*Creates a box around the text in the About Me Section*/
+.about_box {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  height: 39rem;
+  width: 97%;
+  border-radius: 5rem;
+  margin: 0 auto;
+}
+
+/*Text within about section*/
+.about_text {
+  font-family: "Roboto";
+  text-align: center;
+  font-size: var(--font-size-medium);
+  display: block;
+  width: 95%;
+  margin: 2rem auto;
+  padding-top: 1rem;
+}
+
+/* Handles the image portion of the about me section */
+.about_images {
+  text-align: center;
+  display: block;
+  width: 95%;
+  margin: 2rem auto;
+  padding-top: 1rem;
+  opacity: 0.8;
+}
+
+/* Handles image properites for this section */
+.about_images img {
+  position: absolute;
+  height: auto;
+  max-width: 40%;
+  transform: translate(-50%);
+  animation-name: fadeinout;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+}
+
+/* Animation Delays for each picture in this section */
+.about_images img:nth-of-type(1) {
+  animation-delay: 8s;
+}
+
+.about_images img:nth-of-type(2) {
+  animation-delay: 4s;
+}
+
+.about_images img:nth-of-type(3) {
+  animation-delay: 0s;
+}
+
+/*Removes bullets in a list*/
+.no_bullets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 /*Creates project section*/
-.projects{
-  height: 100vh;
+.projects {
+  height: 95vh;
   padding: 1rem;
 }
 
 /*Heading of project section*/
-.project_intro{
+.project_intro {
   position: relative;
   margin: auto;
   text-align: center;
   font-size: var(--font-size-large);
   letter-spacing: 0.1rem;
   font-weight: bold;
-  font-family: "Roboto";
+  font-family: "Roboto Mono";
   overflow: hidden;
+}
+
+/* Row and Column Information*/
+.row {
+  margin: 0 auto;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+
+[class^="col-"] {
+  float: left;
+}
+
+[class^="col-"]:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+
+.col-1-of-3 {
+  width: calc((100% - 6rem * 2) / 3);
+}
+
+.col-2-of-3 {
+  width: calc(((100% - 6rem * 2) / (3 / 2)) + 6rem);
+}
+
+.col-1-of-4 {
+  width: calc((100% - 6rem * 3) / 4);
+}
+
+.col-2-of-4 {
+  width: calc(((100% - 6rem * 3) / 2) + 6rem);
+}
+
+.col-3-of-4 {
+  width: calc(((100% - 6rem * 3) / (4 / 3)) + 12rem);
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /*Changes when screen is below 1600px*/
@@ -259,24 +382,58 @@ body {
     white-space: normal;
     top: 75%;
   }
+
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .about_box {
+    width: auto;
+    height: auto;
+  }
+
+  .about_images img{
+	  min-height: auto;
+	  min-width: 80%;
+  }
+  
 }
 
 /* Fade In animation*/
-@keyframes fadein{
-	0%{
-		opacity: 0;
-	}
-	100%{
-		opacity: 1;
-	}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Fade Out animation*/
-@keyframes fadeout{
-	0%{
-		opacity: 1;
-	}
-	100%{
-		opacity: 0;
-	}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Fade In and Out animation for pictures */
+@keyframes fadeinout {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
