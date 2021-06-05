@@ -127,7 +127,7 @@ body {
   transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/*Stylizes the hamburger menu page*/
+/*Stylizes the hamburger menu page background and transition */
 .navigation_background {
   height: 6rem;
   width: 6rem;
@@ -302,6 +302,7 @@ body {
 .projects {
   height: 95vh;
   padding: 1rem;
+
 }
 
 /*Heading of project section*/
@@ -373,6 +374,17 @@ body {
 
 /*Changes when screen is below 1024px*/
 @media only screen and (max-width: 1024px) {
+
+  .navigation_button{
+    top: 3rem;
+    right: 3rem;
+  }
+
+  .navigation_background{
+    top: 3rem;
+    right: 3rem;
+  }
+
   .intro {
     white-space: normal;
     top: 40%;
@@ -381,6 +393,10 @@ body {
   .subintro {
     white-space: normal;
     top: 75%;
+  }
+
+  .about{
+    height: 150vh;
   }
 
   [class*="col-"] {
@@ -396,7 +412,18 @@ body {
 	  min-height: auto;
 	  min-width: 80%;
   }
+
+  .project_intro{
+    white-space: normal;
+    overflow: hidden;
+  }
   
+}
+
+@media only screen and (max-width: 360px) {
+  html{
+    font-size: 50%;
+  }
 }
 
 /* Fade In animation*/
