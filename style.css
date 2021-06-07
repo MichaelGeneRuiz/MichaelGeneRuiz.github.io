@@ -111,7 +111,7 @@ body {
 /*Fades the hamburger menu text in*/
 .navigation_item {
   margin: 1rem;
-  animation: fadein 1s;
+  animation: fadein 2s;
 }
 
 /*Stylizes the hamburger menu*/
@@ -187,6 +187,7 @@ body {
   height: 125vh;
 }
 
+/* Side Profile in Header Section */
 .logo {
   position: absolute;
   transform: translate(-2rem);
@@ -207,6 +208,7 @@ body {
   font-family: "Roboto Mono", monospace;
   overflow: hidden;
   white-space: nowrap;
+  text-align: center;
 }
 
 /*Secondary words of header section*/
@@ -221,6 +223,7 @@ body {
   font-family: "Roboto", monospace;
   overflow: hidden;
   white-space: nowrap;
+  text-align: center;
 }
 
 /*Creates about section*/
@@ -242,15 +245,24 @@ body {
   padding-bottom: 2rem;
 }
 
+/* Creates a flex box for the elements in the about section*/
+.about_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
 /*Creates a box around the text in the About Me Section*/
 .about_box {
+  flex: 1;
   display: block;
   background-color: rgba(255, 255, 255, 0.2);
   text-align: center;
-  height: 39rem;
+  height: auto;
   width: 97%;
   border-radius: 5rem;
-  margin: 0 auto;
+  margin: 2rem;
 }
 
 /*Text within about section*/
@@ -260,18 +272,17 @@ body {
   font-size: var(--font-size-medium);
   display: block;
   width: 95%;
-  margin: 2rem auto;
-  padding-top: 1rem;
+  margin: 1rem;
 }
 
 /* Handles the image portion of the about me section */
 .about_images {
+  flex: 1;
   text-align: center;
   display: block;
   width: 95%;
-  margin: 2rem auto;
-  padding-top: 1rem;
   opacity: 0.8;
+  margin: 2rem;
 }
 
 /* Handles image properites for this section */
@@ -284,6 +295,7 @@ body {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-duration: 12s;
+  border-radius: 5rem;
 }
 
 /* Animation Delays for each picture in this section */
@@ -308,9 +320,8 @@ body {
 
 /*Creates project section*/
 .projects {
-  height: 95rem;
+  height: auto;
   padding: 1rem;
-
 }
 
 /*Heading of project section*/
@@ -323,53 +334,79 @@ body {
   font-weight: bold;
   font-family: "Roboto Mono";
   overflow: hidden;
+  padding-bottom: 2rem;
 }
 
-/* Row and Column Information*/
-.row {
-  margin: 0 auto;
+/* Creates a flex box for the first row of this section */
+.project_row1{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
 }
 
-.row:not(:last-child) {
-  margin-bottom: 8rem;
+/*Creates a flex box to contain the firstproject elements*/
+.project_box {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  
+  background-color: rgba(255, 255, 255, 0.2);
+  height: auto;
+  border-radius: 5rem;
+  margin: 2rem;
 }
 
-[class^="col-"] {
-  float: left;
+/* Stylizes the image portion of the project box */
+.project_image {
+  flex: 1;
+  margin: 2rem;
+  border-radius: 5rem;
+  max-width: 100%;
 }
 
-[class^="col-"]:not(:last-child) {
-  margin-right: 6rem;
+.project_image:hover{
+  cursor: pointer;
 }
 
-.col-1-of-2 {
-  width: calc((100% - 6rem) / 2);
+/* Stylizes the title portion of the project box */
+.project_title {
+  flex: 1;
+  font-size: var(--font-size-sortalarge);
+  font-weight: bolder;
+  font-family: "Roboto";
+  overflow: hidden;
 }
 
-.col-1-of-3 {
-  width: calc((100% - 6rem * 2) / 3);
+/* Stylizes the description portion of the project box */
+.project_description {
+  flex: 2;
+  margin: 1rem;
+  font-size: var(--font-size-medium);
+  font-family: "Roboto";
+  overflow: hidden;
 }
 
-.col-2-of-3 {
-  width: calc(((100% - 6rem * 2) / (3 / 2)) + 6rem);
+/* Stylizes the links portion of the project box */
+.project_links_container {
+  flex: 1;
+  margin: 1rem;
+  font-size: var(--font-size-medium);
+  font-family: "Roboto";
+  overflow: hidden;
+  font-weight: bolder;
+  text-align: center;
 }
 
-.col-1-of-4 {
-  width: calc((100% - 6rem * 3) / 4);
+/* Sets the color of the links to black */
+.project_links{
+  color: black;
 }
 
-.col-2-of-4 {
-  width: calc(((100% - 6rem * 3) / 2) + 6rem);
-}
-
-.col-3-of-4 {
-  width: calc(((100% - 6rem * 3) / (4 / 3)) + 12rem);
-}
-
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
+/* Removes purple tint when link is clicked */
+.project_links:visited {
+  text-decoration: none;
 }
 
 /*Changes when screen is below 1600px*/
@@ -382,18 +419,17 @@ body {
 
 /*Changes when screen is below 1024px*/
 @media only screen and (max-width: 1024px) {
-
-  .navigation_button{
+  .navigation_button {
     top: 3rem;
     right: 3rem;
   }
 
-  .navigation_background{
+  .navigation_background {
     top: 3rem;
     right: 3rem;
   }
 
-  .logo{
+  .logo {
     max-width: 25%;
   }
 
@@ -404,19 +440,11 @@ body {
 
   .subintro {
     white-space: normal;
-    top: 75%;
+    top: 65%;
   }
 
-  .about{
+  .about {
     height: 150vh;
-  }
-
-  .about_box{
-    padding-bottom: 0.75rem;
-  }
-
-  [class*="col-"] {
-    width: 100%;
   }
 
   .about_box {
@@ -424,38 +452,47 @@ body {
     height: auto;
   }
 
-  .about_images img{
-	  min-height: auto;
-	  min-width: 80%;
+  .about_row {
+    flex-direction: column;
   }
-  
+
+  .about_images img {
+    min-height: auto;
+    min-width: 80%;
+  }
+
+  .project_row1{
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 360px) {
-  html{
+  html {
     font-size: 50%;
   }
 }
 
 /*Changes when screen height is below 575px*/
-@media only screen and (max-height: 575px){
-  .about{
+@media only screen and (max-height: 575px) {
+  .about {
     height: 275vh;
+  }
+
+  .intro {
+    top: 30%;
+  }
+
+  .subintro{
+    top: 70%;
   }
 }
 
 /*Changes when screen height is below 360px*/
-@media only screen and (max-height: 360px){
-  html{
+@media only screen and (max-height: 360px) {
+  html {
     font-size: 50%;
   }
-
-  .intro{
-    top: 35%;
-  }
 }
-
-
 
 /* Fade In animation*/
 @keyframes fadein {
